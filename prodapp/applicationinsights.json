@@ -1,0 +1,36 @@
+{
+  "connectionString": "InstrumentationKey=e056ac8e-4c1f-4573-9ff0-b600a6dcf309;IngestionEndpoint=https://eastus-1.in.applicationinsights.azure.com/",
+  "role": {
+    "name": "my cloud role name"
+  },
+  "sampling": {
+    "percentage": 100
+  },
+  "jmxMetrics": [
+  ],
+  "customDimensions": {
+  },
+  "instrumentation": {
+    "logging": {
+      "level": "INFO"
+    },
+    "micrometer": {
+      "enabled": true
+    }
+  },
+  "proxy": {
+  },
+  "preview": {
+    "processors": [
+    ]
+  },
+  "selfDiagnostics": {
+    "destination": "file+console",
+    "level": "INFO",
+    "file": {
+      "path": "applicationinsights.log",
+      "maxSizeMb": 5,
+      "maxHistory": 1
+    }
+  }
+}

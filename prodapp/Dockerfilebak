@@ -1,0 +1,8 @@
+FROM openjdk:8
+COPY target/prodapp-0.0.1-SNAPSHOT.jar /usr/local/
+COPY applicationinsights-agent-3.0.0.jar /usr/local/
+ENV APPLICATIONINSIGHTS_CONNECTION_STRING=InstrumentationKey=e056ac8e-4c1f-4573-9ff0-b600a6dcf309;IngestionEndpoint=https://eastus-1.in.applicationinsights.azure.com/
+ENV APPLICATIONINSIGHTS_CONFIGURATION_FILE=/usr/local/applicationinsights.json
+EXPOSE 80 80
+WORKDIR /usr/local
+CMD ["java", "-javaagent:/usr/local/applicationinsights-agent-3.0.0.jar", "-jar", "prodapp-0.0.1-SNAPSHOT.jar"]
